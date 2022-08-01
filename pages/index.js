@@ -5,8 +5,74 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const data = [
+    {
+      id_document: "22848677",
+      nama: "Abyasa Mangunsong",
+      resi: "27712576MRS",
+      checkpoint: "checkpoint 3",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "12026841",
+      nama: "Hasna Usamah",
+      resi: "26222840MRS",
+      checkpoint: "checkpoint 4",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "28399289",
+      nama: "Sadina Hastuti S.Pt",
+      resi: "36279170MRS",
+      checkpoint: "checkpoint 2",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "25837093",
+      nama: "Dirja Irfan Natsir M.TI.",
+      resi: "81602762MRS",
+      checkpoint: "checkpoint 10",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "49036161",
+      nama: "Darmana Narpati",
+      resi: "26192323MRS",
+      checkpoint: "checkpoint 1",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "63295954",
+      nama: "Edison Irawan",
+      resi: "85190050MRS",
+      checkpoint: "checkpoint 5",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+    {
+      id_document: "89154909",
+      nama: "Lalita Sudiati",
+      resi: "62800848MRS",
+      checkpoint: "checkpoint 2",
+      status: "Aktif",
+      created_at: "08/01/2022",
+      updated_at: "08/01/2022",
+    },
+  ];
+
   useEffect(() => {
-    axios.get("products/view/all?perPage=105").then((res) => {
+    axios.get("prisoners/").then((res) => {
       console.log(res.data);
     });
   }, []);
@@ -14,7 +80,7 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("auth/login", { email, password })
+      .post(`/prisoners/delete`, { id: [1, 2, 3, 4, 5, 6] })
       .then((res) => {
         console.log(res.data);
       })
