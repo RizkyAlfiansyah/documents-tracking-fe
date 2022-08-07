@@ -2,22 +2,29 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Logo from "assets/kumham-logo.png";
 import { Button, Input, Label } from "components";
-import { useForm } from "react-hook-form";
+import { AxiosApi } from "lib/axios";
+import { useRouter } from "next/router";
 
 const Home = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const router = useRouter();
   const [data, setData] = useState({
-    email: "",
+    identifier: "",
     password: "",
   });
-  const [processing, setProcessing] = useState(false);
 
-  const onHandleChange = (e) => {
-    setProcessing(true);
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+  const [error, setError] = useState('');
+
+  const onClickLogin = async () => {
+    if (data) {
+      AxiosApi.post("/login", data).then((res) => {
+        if (res.data) {
+          localStorage.setItem("token", res.data.data.token);
+          router.push("/dashboard");
+        }
+      }).catch((err) => {
+        setError("Username/Nip atau Password salah !");
+      })
+    }
   }
 
   return (
@@ -28,7 +35,13 @@ const Home = () => {
           <p className="text-center font-semibold"> Selamat Datang !</p>
         </div>
         <div className="w-full mt-6 px-6 py-4 bg-white shadow-md overflow-hidden rounded-lg">
-          <form className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
+            {
+              error &&
+              <p className="text-red-600 bg-red-300 p-2 rounded-sm text-xs font-semibold">
+                {error}
+              </p>
+            }
             <div>
               <Label forInput="email" value="Email" />
               <Input
@@ -38,7 +51,7 @@ const Home = () => {
                 className="mt-1 block w-full"
                 autoComplete="username"
                 isFocused={true}
-                handleChange={onHandleChange}
+                handleChange={(e) => setData({ ...data, identifier: e.target.value })}
               />
             </div>
             <div>
@@ -50,15 +63,15 @@ const Home = () => {
                 className="mt-1 block w-full"
                 autoComplete="username"
                 isFocused={true}
-                handleChange={onHandleChange}
+                handleChange={(e) => setData({ ...data, password: e.target.value })}
               />
             </div>
             <div className="flex items-center justify-end mt-4">
-              <Button className="ml-4" processing={processing}>
+              <button type="button" className="inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest active:bg-gray-900 transition ease-in-out duration-150 ml-4" disabled={data ? false : true} onClick={onClickLogin}>
                 Log in
-              </Button>
+              </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

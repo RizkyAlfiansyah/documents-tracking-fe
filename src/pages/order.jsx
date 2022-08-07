@@ -1,16 +1,26 @@
 
 import Head from 'next/head';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StepperNav } from "vertical-stepper-nav";
 import { useRouter } from 'next/router'
+import { useHeaderStore } from 'store';
+import { PageHead } from 'layout';
 
 export default function Main() {
     const router = useRouter()
+
+    const { handleChangeTitleAction } = useHeaderStore()
+
+    useEffect(() => {
+        handleChangeTitleAction({
+            title: 'Track Order',
+            onBack: null,
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     return (
         <>
-            <Head
-                title='Track Dokumen'
-            />
+            <PageHead title="Track Order" description="Document Tracking" />
             <div className='w-full flex flex-col gap-4 min-h-screen bg-primary'>
                 <div className='w-full p-4' style={{ background: 'linear-gradient(273deg, rgba(81,226,255,1) 23%, rgba(39,111,201,1) 100%, rgba(2,0,36,1) 100%)' }}>
                     <p className='text-3xl text-white font-bold'>
