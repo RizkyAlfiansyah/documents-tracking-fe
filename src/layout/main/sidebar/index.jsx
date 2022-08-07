@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LogoPNG from "assets/kumham-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDatabase, faChartColumn, faArrowRightFromBracket, faStairs } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,13 @@ import Image from "next/image";
 export default function Sidebar() {
 
     const path = "dashboard"
+    const [token, setToken] = useState(window.localStorage.getItem("token") ? window.localStorage.getItem("token") : "");
+
+    useEffect(() => {
+        if (!token) {
+            window.location.href = '/auth'
+        }
+    }, [token])
 
     return (
         <>
@@ -34,7 +41,13 @@ export default function Sidebar() {
                 </div>
                 <div className="w-full flex items-center">
                     <div className="w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100 p-2">
-                        <button onClick={() => setOpenModal(true)}>
+                        <button onClick={() => {
+                            {
+                                window.localStorage.removeItem("token")
+                                setToken("")
+                            }
+
+                        }}>
                             <FontAwesomeIcon icon={faArrowRightFromBracket} />
                             <span className="text-gray-600"> Logout </span>
                         </button>
