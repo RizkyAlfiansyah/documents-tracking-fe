@@ -19,6 +19,9 @@ const Home = () => {
       AxiosApi.post("/login", data).then((res) => {
         if (res.data) {
           localStorage.setItem("token", res.data.data.token);
+          //save token to cookie
+          document.cookie = `token=${res.data.data.token}`;
+
           router.push("/dashboard");
         }
       }).catch((err) => {
