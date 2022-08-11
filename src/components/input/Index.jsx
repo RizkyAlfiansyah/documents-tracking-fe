@@ -9,6 +9,7 @@ const Input = ({
     required,
     isFocused,
     handleChange,
+    disabled = false
 }) => {
     const input = useRef();
 
@@ -23,7 +24,7 @@ const Input = ({
             <input
                 type={type}
                 name={name}
-                value={value}
+                defaultValue={value}
                 className={
                     `bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ` +
                     className
@@ -32,6 +33,7 @@ const Input = ({
                 autoComplete={autoComplete}
                 required={required}
                 onChange={(e) => handleChange(e)}
+                disabled={disabled}
             />
         </div>
     );

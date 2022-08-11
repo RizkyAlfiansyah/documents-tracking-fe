@@ -2,23 +2,24 @@ import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-const Search = ({ onChange, type, onClear, value, placeholder }) => {
-
+const Search = ({ onChange, onClear, value, placeholder }) => {
 
     return (
-        <div className='relative bg-white flex justify-evenly gap-2 px-2 items-center rounded-md'>
-            <input
-                type={type}
-                placeholder={placeholder}
-                className='w-40 border-none rounded-md px-0 py-0 focus:outline-none focus:ring-0'
-                onChange={onChange}
-                value={value}
-            />
-            <FontAwesomeIcon
-                icon={faClose}
-                className=' text-gray-500 cursor-pointer'
-                onClick={onClear}
-            />
+        <div className='relative bg-white flex justify-start gap-2 items-center rounded-md'>
+            <div className='w-full relative'>
+                <input
+                    type="text"
+                    placeholder={placeholder}
+                    className='w-11/12 rounded-sm px-2 py-1 focus:outline-none focus:ring-0'
+                    onChange={onChange}
+                    value={value}
+                />
+                <FontAwesomeIcon
+                    icon={faClose}
+                    className=' text-gray-500 cursor-pointer absolute top-2 right-2'
+                    onClick={onClear}
+                />
+            </div>
         </div>
     )
 }

@@ -5,11 +5,14 @@ import { faDatabase, faChartColumn, faArrowRightFromBracket, faStairs, faPerson,
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getUserToken, removeToken } from "lib/authService";
+import { ModalLogoutConfirmation } from "components";
 
 export default function Sidebar() {
     const router = useRouter()
     const token = getUserToken()
     const path = router.route
+
+    const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
         if (!token) {
@@ -49,13 +52,17 @@ export default function Sidebar() {
                 </div>
                 <div className="w-full flex items-center">
                     <div className="w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100 p-2">
-                        <button onClick={() => removeToken()}>
+                        <button onClick={() => setOpenModal(true)}>
                             <FontAwesomeIcon icon={faArrowRightFromBracket} />
                             <span className="text-gray-600"> Logout </span>
                         </button>
                     </div>
                 </div>
             </div>
+            <ModalLogoutConfirmation
+                isOpen={openModal}
+                onClose={() => setOpenModal(false)}
+            />
         </>
     )
 }

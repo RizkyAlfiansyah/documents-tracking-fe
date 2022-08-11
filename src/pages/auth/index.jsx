@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 const Home = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     identifier: "",
     password: "",
@@ -15,13 +16,11 @@ const Home = () => {
   const [error, setError] = useState('');
 
   const onClickLogin = async () => {
+    setLoading(true);
     if (data) {
       AxiosApi.post("/login", data).then((res) => {
         if (res.data) {
           localStorage.setItem("token", res.data.data.token);
-          //save token to cookie
-          document.cookie = `token=${res.data.data.token}`;
-
           router.push("/dashboard");
         }
       }).catch((err) => {
@@ -52,9 +51,12 @@ const Home = () => {
                 name="email"
                 value={data.email}
                 className="mt-1 block w-full"
-                autoComplete="username"
+                autoComplete="off"
                 isFocused={true}
-                handleChange={(e) => setData({ ...data, identifier: e.target.value })}
+                handleChange={(e) => {
+                  setData({ ...data, identifier: e.target.value })
+                  setLoading(false)
+                }}
               />
             </div>
             <div>
@@ -64,13 +66,14 @@ const Home = () => {
                 name="password"
                 value={data.password}
                 className="mt-1 block w-full"
-                autoComplete="username"
+                autoComplete="off"
                 isFocused={true}
                 handleChange={(e) => setData({ ...data, password: e.target.value })}
               />
             </div>
             <div className="flex items-center justify-end mt-4">
-              <button type="button" className="inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest active:bg-gray-900 transition ease-in-out duration-150 ml-4" disabled={data ? false : true} onClick={onClickLogin}>
+              <button type="button" className="inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest active:bg-gray-900 transition ease-in-out duration-150 ml-4 disabled:bg-gray-400"
+                disabled={loading || !data.identifier ? true : false} onClick={onClickLogin}>
                 Log in
               </button>
             </div>
