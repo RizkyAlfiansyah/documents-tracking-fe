@@ -5,6 +5,7 @@ import { StepperNav } from "vertical-stepper-nav";
 import { useRouter } from 'next/router'
 import { useHeaderStore } from 'store';
 import { PageHead } from 'layout';
+import { getPengajuanById, getResiById } from 'lib/axios';
 
 export default function Main() {
     const router = useRouter()
@@ -16,7 +17,11 @@ export default function Main() {
             title: 'Track Order',
             onBack: null,
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        if (router.query.resi) {
+            getResiById(router.query.resi).then(res => {
+                console.log(res.data)
+            })
+        }
     }, []);
     return (
         <>

@@ -1,27 +1,36 @@
 import Modal from 'components/modal'
-import { deletePrisoners } from 'lib/axios'
+import { deletePengajuan, deletePrisoners } from 'lib/axios'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-const ModalConfirmationDelete = ({ isOpen, onClose, data }) => {
-    console.log(data)
+const ModalConfirmationDelete = ({ isOpen, onClose, data, isPengajuan = false }) => {
     const router = useRouter()
 
     const handleDelete = async () => {
         const token = localStorage.getItem('token')
         if (token) {
-            deletePrisoners(token, data).then(res => {
-                if (res.message) {
-                    router.push('/dashboard/warga-binaan?deleted=true')
-                    onClose()
-                }
-            }).catch(err => {
-                console.log(err)
-            })
+            if (isPengajuan) {
+                deletePengajuan(token, data).then(res => {
+                    if (res.message) {
+                        router.push('/dashboard/pengajuan?deleted=true')
+                        onClose()
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
+            } else {
+                deletePrisoners(token, data).then(res => {
+                    if (res.message) {
+                        router.push('/dashboard/warga-binaan?deleted=true')
+                        onClose()
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
+            }
         } else {
             router.push('/auth')
         }
-
     }
 
     return (

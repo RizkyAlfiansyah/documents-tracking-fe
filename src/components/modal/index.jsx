@@ -11,7 +11,8 @@ const Modal = ({ isOpen, onClose, children }) => {
             padding: '12px',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: '520px',
+            width: '620px',
+            backgroundColor: '#fff',
         },
     };
     return (

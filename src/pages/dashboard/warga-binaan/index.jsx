@@ -88,7 +88,6 @@ const WargaBinaan = () => {
                 onClick={() => {
                     setOpenModalEdit(true)
                     setDataEditId(row.id)
-                    console.log("row", row)
                 }}
             >
                 <FontAwesomeIcon icon={faPencil} />

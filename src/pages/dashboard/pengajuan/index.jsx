@@ -1,6 +1,6 @@
 import { faCircleExclamation, faPencil, faPlus, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button, ModalAddPrisoner, ModalConfirmationDelete, ModalEditPrisoner, Search } from 'components'
+import { Button, ModalAddPengajuan, ModalAddPrisoner, ModalConfirmationDelete, ModalDetailPengajuan, ModalEditPrisoner, Search } from 'components'
 import HomePage from 'layout/Homepage'
 import { getPengajuan, getPrisoners } from 'lib/axios'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
@@ -28,7 +28,8 @@ const Pengajuan = () => {
     }, [dataEditId])
     const [selectedRows, setSelectedRows] = useState([]);
     const [toggleCleared, setToggleCleared] = useState(false);
-
+    const [openModalDetail, setOpenModalDetail] = useState(false)
+    const [dataDetail, setDataDetail] = useState([])
     const handleRowSelected = useCallback(state => {
         setSelectedRows(state.selectedRows);
     }, []);
@@ -86,15 +87,14 @@ const Pengajuan = () => {
         {
             name: 'Checkpoint',
             selector: row => <div className='text-xs'>
-                {row.checkpoint}
+                {row.last_checkpoint?.pesan}
             </div>,
         },
         {
             cell: row => <button className='flex items-center gap-1 bg-cyan-600 hover:bg-cyan-500 px-4 py-1 text-white text-xs rounded-lg'
                 onClick={() => {
-                    // setOpenModalEdit(true)
-                    // setDataEditId(row.id)
-                    // console.log("row", row)
+                    setOpenModalDetail(true)
+                    setDataDetail(row.id)
                 }}
             >
                 <FontAwesomeIcon icon={faCircleExclamation} />
@@ -104,7 +104,6 @@ const Pengajuan = () => {
             allowOverflow: true,
             button: true,
         }
-
 
     ]
 
@@ -173,7 +172,7 @@ const Pengajuan = () => {
                     </div>
                 </div>
             </HomePage>
-            <ModalAddPrisoner
+            <ModalAddPengajuan
                 isOpen={modal}
                 onClose={() => setModal(false)}
             />
@@ -186,6 +185,12 @@ const Pengajuan = () => {
                 isOpen={openModalDelete}
                 onClose={() => setOpenModalDelete(false)}
                 data={{ id: dataDeleteId }}
+                isPengajuan={true}
+            />
+            <ModalDetailPengajuan
+                isOpen={openModalDetail}
+                onClose={() => setOpenModalDetail(false)}
+                data={dataDetail}
             />
             <Toaster />
         </>

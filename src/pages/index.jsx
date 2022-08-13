@@ -1,19 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faSearch } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useHeaderStore } from 'store'
+import { useRouter } from 'next/router'
 
 export default function Welcome() {
+    const router = useRouter()
     const { handleChangeTitleAction } = useHeaderStore()
+    const [data, setData] = useState("")
+
 
     useEffect(() => {
         handleChangeTitleAction({
             title: 'Welcome',
             onBack: null,
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
     }, []);
+
+    const submitResi = () => {
+        if (data) {
+            router.push('/order?resi=' + data)
+        }
+    }
 
     return (
         <>
@@ -34,12 +44,12 @@ export default function Welcome() {
                             <div className='px-3 border-r-2'>
                                 <FontAwesomeIcon icon={faSearch} />
                             </div>
-                            <input type="text" className='px-1 py-2 w-5/6 border-none focus:outline-none focus:ring-0' placeholder='Masukkan Nomor Resi' />
-                            <Link href={'/order'}>
-                                <button className='p-2 bg-slate-800 text-md text-white rounded-r-md'>
-                                    Lacak
-                                </button>
-                            </Link>
+                            <input type="text" value={data} className='px-1 py-2 w-5/6 border-none focus:outline-none focus:ring-0' placeholder='Masukkan Nomor Resi'
+                                onChange={(e) => setData(e.target.value)}
+                            />
+                            <button className='p-2 bg-slate-800 text-md text-white rounded-r-md' onClick={submitResi}>
+                                Lacak
+                            </button>
                         </div>
                     </div>
                 </div>
