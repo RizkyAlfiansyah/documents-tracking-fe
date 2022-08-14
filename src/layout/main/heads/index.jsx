@@ -12,7 +12,7 @@ const Header = ({ title, description }) => {
                 <meta name="og:description" property="og:description" content={description} />
                 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+                <meta httpEequiv="Content-Security-Policy" content="upgrade-insecure-requests" />
             </Head>
         </React.Fragment>
     );
