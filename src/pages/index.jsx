@@ -31,7 +31,9 @@ export default function Welcome() {
                 <div className='w-full flex flex-col' style={{ background: 'linear-gradient(21deg, rgba(81,226,255,1) 23%, rgba(39,111,201,1) 100%, rgba(2,0,36,1) 100%)' }}>
                     <div className='w-full flex justify-end gap-4 p-8'>
                         <span className='flex gap-2 items-center text-secondary text-md border-2 border-secondary rounded-lg px-2 cursor-pointer'>
-                            <FontAwesomeIcon icon={faPhone} />
+                            <div className='w-2 h-2 flex justify-center items-center'>
+                                <FontAwesomeIcon icon={faPhone} />
+                            </div>
                             Hubungi Kami</span>
                     </div>
                     <div className='w-full h-96 lg:p-28 p-4 flex flex-col items-end justify-end gap-4'>
