@@ -58,14 +58,16 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
             <div className='w-full h-full flex flex-col gap-6 items-start justify-center'>
                 <div className="w-full flex items-center justify-between">
                     <span className='font-bold'>Detail Pengajuan</span>
-                    <FontAwesomeIcon
-                        icon={faClose}
-                        onClick={() => {
-                            onClose()
-                            setCheckPoint(1)
-                        }}
-                        className='cursor-pointer'
-                    />
+                    <div className='w-2 h-2 flex items-center justify-center'>
+                        <FontAwesomeIcon
+                            icon={faClose}
+                            onClick={() => {
+                                onClose()
+                                setCheckPoint(1)
+                            }}
+                            className='cursor-pointer'
+                        />
+                    </div>
                 </div>
                 <div className='w-full p-0 flex flex-col items-start justify-center'>
                     <div className="w-full bg-gray-200 p-2 rounded-md">
