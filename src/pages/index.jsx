@@ -31,7 +31,7 @@ export default function Welcome() {
                 <div className='w-full flex flex-col' style={{ background: 'linear-gradient(21deg, rgba(81,226,255,1) 23%, rgba(39,111,201,1) 100%, rgba(2,0,36,1) 100%)' }}>
                     <div className='w-full flex justify-end gap-4 p-8'>
                         <span className='flex gap-2 items-center text-secondary text-md border-2 border-secondary rounded-lg px-2 cursor-pointer'>
-                            <div className='w-2 h-2 flex justify-center items-center'>
+                            <div className='w-3 h-3 flex justify-center items-center'>
                                 <FontAwesomeIcon icon={faPhone} />
                             </div>
                             Hubungi Kami</span>
@@ -43,7 +43,7 @@ export default function Welcome() {
                             LPKA Maros
                         </span>
                         <div className='sm:w-80 w-full relative flex items-center lg:justify-start sm:justify-center lg:mb-auto mx-auto mb-auto bg-white rounded-md gap-0'>
-                            <div className='px-3 border-r-2'>
+                            <div className='w-3 h-3 px-3 border-r-2'>
                                 <FontAwesomeIcon icon={faSearch} />
                             </div>
                             <input type="text" value={data} className='px-1 py-2 w-5/6 border-none focus:outline-none focus:ring-0' placeholder='Masukkan Nomor Resi'
