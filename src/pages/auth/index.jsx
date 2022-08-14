@@ -25,6 +25,7 @@ const Home = () => {
         }
       }).catch((err) => {
         setError("Username/Nip atau Password salah !");
+        setLoading(false);
       })
     }
   }
@@ -67,7 +68,6 @@ const Home = () => {
                 value={data.password}
                 className="mt-1 block w-full"
                 autoComplete="off"
-                isFocused={true}
                 handleChange={(e) => setData({ ...data, password: e.target.value })}
               />
             </div>
