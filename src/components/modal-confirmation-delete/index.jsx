@@ -16,7 +16,7 @@ const ModalConfirmationDelete = ({ isOpen, onClose, data, isPengajuan = false })
                         onClose()
                     }
                 }).catch(err => {
-                    console.log(err)
+                    router.push('/dashboard/pengajuan?deleted=false')
                 })
             } else {
                 deletePrisoners(token, data).then(res => {
@@ -25,7 +25,7 @@ const ModalConfirmationDelete = ({ isOpen, onClose, data, isPengajuan = false })
                         onClose()
                     }
                 }).catch(err => {
-                    console.log(err)
+                    router.push('/dashboard/warga-binaan?deleted=false')
                 })
             }
         } else {

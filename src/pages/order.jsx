@@ -1,28 +1,23 @@
 
-import Head from 'next/head';
-import React, { useEffect } from 'react'
-import { StepperNav } from "vertical-stepper-nav";
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { useHeaderStore } from 'store';
 import { PageHead } from 'layout';
-import { getPengajuanById, getResiById } from 'lib/axios';
+import { getResiById } from 'lib/axios';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Main() {
     const router = useRouter()
-
-    const { handleChangeTitleAction } = useHeaderStore()
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        handleChangeTitleAction({
-            title: 'Track Order',
-            onBack: null,
-        });
         if (router.query.resi) {
             getResiById(router.query.resi).then(res => {
-                console.log(res.data)
+                setData(res.data)
             })
         }
-    }, []);
+    }, [router]);
+
     return (
         <>
             <PageHead title="Track Order" description="Document Tracking" />
@@ -37,35 +32,55 @@ export default function Main() {
                         <p className='text-xl text-gray-700 font-extrabold'>Informasi Paket</p>
                         <div className='w-full flex flex-col items-start justify-between'>
                             <p className='text-md text-gray-500'>
+                                Nama Warga Binaan
+                            </p>
+                            <div className='text-md font-extrabold'>
+                                {data?.nama || "Memuat Data ..."}
+                            </div>
+                        </div>
+                        <div className='w-full flex flex-col items-start justify-between'>
+                            <p className='text-md text-gray-500'>
                                 Nomor Resi
                             </p>
                             <p className='text-md font-extrabold'>
-                                NP0012313123MRS
+                                {data?.resi || "Memuat Data ..."}
                             </p>
                         </div>
                     </div>
                     <div className='w-full bg-white p-2'>
                         <p className='text-xl text-green-500 font-bold border-b-2'>Update Status Paket</p>
                         <div className='w-full p-2'>
-                            <StepperNav
-                                steps={[
-                                    {
-                                        stepContent: () => <div className='font-thin text-sm'>Step 1</div>,
-                                        stepStatusCircleSize: 16,
-                                        stepStateColor: "green"
-                                    },
-                                    {
-                                        stepContent: () => <div className='font-thin text-gray-500 text-sm'>Step 2</div>,
-                                        stepStatusCircleSize: 16,
-                                        stepStateColor: "#F6F6F6"
-                                    },
-                                    {
-                                        stepContent: () => <div className='font-thin text-gray-500 text-sm'>Nomor Resi Pengiriman telah dibuat</div>,
-                                        stepStatusCircleSize: 16,
-                                        stepStateColor: "#F6F6F6"
-                                    }
-                                ]}
-                            />
+                            <div className='w-full flex flex-col justify-end items-start'>
+                                {
+                                    data?.checkpoints?.length > 1 ?
+                                        data?.checkpoints?.map((item, index) => {
+                                            return (
+                                                <>
+                                                    <div className='w-full relative flex gap-2 justify-start items-center' key={index}>
+                                                        <div className={`w-3 h-3 rounded-full ${index === 0 ? 'bg-green-400' : 'bg-gray-400'}`}>
+                                                        </div>
+                                                        <div className='w-4/12 md:w-5/12 xl:w-2/12 text-xs'>
+                                                            {item.waktu || <Skeleton />}
+                                                        </div>
+                                                        <div className={`w-8/12 md:w-7/12 text-xs ${index === 0 ? 'text-green-600' : "text-gray-500"} font-semibold`}>
+                                                            {item.pesan || <Skeleton />}
+                                                        </div>
+                                                    </div>
+                                                    {
+                                                        index !== data?.checkpoints?.length - 1 &&
+                                                        <div className='h-10 border-1 border-gray-300 ml-1'></div>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                        :
+                                        <div className='w-full flex items-center justify-center text-black font-semibold text-md'>
+                                            <p>
+                                                Memuat Data ...
+                                            </p>
+                                        </div>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

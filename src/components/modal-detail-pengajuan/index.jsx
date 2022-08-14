@@ -16,8 +16,6 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
     });
     const [datas, setDatas] = useState([]);
 
-    console.log("id", data);
-
     useMemo(() => {
         var dateStringWithTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
         setCheck({
@@ -31,7 +29,6 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
         const token = localStorage.getItem('token');
         if (token) {
             getPengajuanById(token, data).then(res => {
-                console.log("res.data", res.data);
                 setDatas(res.data);
             })
         } else {
@@ -46,7 +43,7 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
                 router.push('/dashboard/pengajuan?success=true');
                 onClose();
             }).catch(err => {
-                console.log(err);
+                router.push('/dashboard/pengajuan?success=false');
             });
         } else {
             router.push('/auth');

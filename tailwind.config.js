@@ -21,6 +21,10 @@ module.exports = {
       height: {
         "screen-80": "90vh",
       },
+      borderWidth: {
+        0: "0",
+        1: "1px",
+      },
     },
   },
   plugins: [],

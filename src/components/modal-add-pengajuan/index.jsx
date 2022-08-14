@@ -88,7 +88,6 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
                 }
             }).catch(err => {
                 setErrorMsg(true)
-                // console.log(err);
             })
         } else {
             router.push('/auth')

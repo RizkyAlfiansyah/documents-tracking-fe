@@ -39,9 +39,17 @@ const Pengajuan = () => {
             if (router.query.edited) {
                 toast.success("Data berhasil diubah")
             } else if (router.query.deleted) {
-                toast.success("Data berhasil dihapus")
+                if (router.query.deleted === true) {
+                    toast.success("Data berhasil dihapus")
+                } else {
+                    toast.error("Data gagal dihapus")
+                }
             } else if (router.query.success) {
-                toast.success("Data berhasil ditambahkan")
+                if (router.query.success === true) {
+                    toast.success("Data berhasil ditambahkan")
+                } else {
+                    toast.error("Data gagal ditambahkan")
+                }
             }
         }
         const fetchData = async () => {
@@ -125,7 +133,7 @@ const Pengajuan = () => {
 
     return (
         <>
-            <HomePage title="Warga Binaan">
+            <HomePage title="Data Pengajuan">
                 <div className='w-full p-2 flex flex-col gap-2'>
                     <div className='w-full flex justify-end items-center gap-2'>
                         <div className='w-52 border border-gray-400 rounded-sm'>

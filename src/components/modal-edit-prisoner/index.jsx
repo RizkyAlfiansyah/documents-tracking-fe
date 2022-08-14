@@ -32,7 +32,6 @@ const ModalAddPrisoner = ({ isOpen, onClose, data }) => {
         if (token) {
             await editPrisoners(token, value).then(res => {
                 if (res.data) {
-                    console.log(res.data);
                     router.push('/dashboard/warga-binaan/?edited=true')
                     onClose()
                 }
