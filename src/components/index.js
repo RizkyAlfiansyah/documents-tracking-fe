@@ -1,7 +1,7 @@
-export { default as Input } from "./input";
-export { default as Button } from "./button";
-export { default as Label } from "./label";
-export { default as Search } from "./search";
+export { default as Input } from "./input-default";
+export { default as Button } from "./button-default";
+export { default as Label } from "./label-default";
+export { default as Search } from "./search-default";
 export { default as Modals } from "./modal";
 export { default as ModalAddPrisoner } from "./modal-add-prisoner";
 export { default as ModalAddPengajuan } from "./modal-add-pengajuan";
