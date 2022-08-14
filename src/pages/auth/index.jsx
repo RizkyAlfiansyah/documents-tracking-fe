@@ -46,11 +46,11 @@ const Home = () => {
               </p>
             }
             <div>
-              <Label forInput="email" value="Email" />
+              <Label forInput="identifier" value="Username / NIP" />
               <Input
                 type="text"
-                name="email"
-                value={data.email}
+                name="identifier"
+                value={data.identifier}
                 className="mt-1 block w-full"
                 autoComplete="off"
                 isFocused={true}
