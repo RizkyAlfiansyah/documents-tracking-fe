@@ -102,18 +102,20 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
             <div className='w-full flex flex-col justify-start items-center gap-4'>
                 <div className='w-full p-1 flex justify-between items-center'>
                     <h1 className='text-xl font-semibold'>Tambah Warga Binaan</h1>
-                    <FontAwesomeIcon
-                        icon={faClose}
-                        className='cursor-pointer'
-                        onClick={() => {
-                            onClose()
-                            setValue({
-                                ...value,
-                                nama: '',
-                                nik: '',
-                            })
-                        }}
-                    />
+                    <div className='w-2 h-2 flex items-center justify-center'>
+                        <FontAwesomeIcon
+                            icon={faClose}
+                            className='cursor-pointer'
+                            onClick={() => {
+                                onClose()
+                                setValue({
+                                    ...value,
+                                    nama: '',
+                                    nik: '',
+                                })
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className='w-full flex flex-col justify-start items-center gap-3 p-2'>
                     <div className='w-full flex flex-col gap-2'>
