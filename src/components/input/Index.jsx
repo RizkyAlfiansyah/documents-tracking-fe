@@ -11,7 +11,7 @@ const Input = ({
     handleChange,
     disabled = false
 }) => {
-    const input = useRef();
+    const input = useRef()
 
     useEffect(() => {
         if (isFocused) {

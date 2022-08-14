@@ -10,8 +10,8 @@ const Header = ({ title, description }) => {
                 <meta name="description" content={description} />
                 <meta name="og:title" property="og:title" content={title} />
                 <meta name="og:description" property="og:description" content={description} />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
                 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
             </Head>
         </React.Fragment>
     );

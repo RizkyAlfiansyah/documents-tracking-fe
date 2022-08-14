@@ -16,7 +16,7 @@ const Search = ({ onChange, onClear, value, placeholder }) => {
                 />
                 <FontAwesomeIcon
                     icon={faClose}
-                    className=' text-gray-500 cursor-pointer absolute top-2 right-2'
+                    className='absolute text-gray-500 cursor-pointer top-2 right-2'
                     onClick={onClear}
                 />
             </div>
