@@ -18,7 +18,6 @@ const Pengajuan = () => {
     const [dataEditId, setDataEditId] = useState(null)
     const [dataDeleteId, setDataDeleteId] = useState([])
     const [filterText, setFilterText] = React.useState('');
-
     const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
     const filteredItems = data.filter(
         item => item.nama && item.nama.toLowerCase().includes(filterText.toLowerCase()),
