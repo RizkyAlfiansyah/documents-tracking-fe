@@ -23,13 +23,13 @@ export default function Main() {
             <PageHead title="Track Order" description="Document Tracking" />
             <div className='w-full flex flex-col gap-4 min-h-screen bg-primary'>
                 <div className='w-full p-4' style={{ background: 'linear-gradient(273deg, rgba(81,226,255,1) 23%, rgba(39,111,201,1) 100%, rgba(2,0,36,1) 100%)' }}>
-                    <p className='text-3xl text-white font-bold'>
-                        Document Tracker
+                    <p className='text-2xl text-white font-bold'>
+                        Lacak Dokumen
                     </p>
                 </div>
                 <div className='w-full p-2 lg:px-40 sm:p-2 flex lg:flex-row sm:flex-col flex-col gap-2'>
                     <div className='lg:w-5/12 w-full bg-white p-2 flex flex-col gap-2'>
-                        <p className='text-xl text-gray-700 font-extrabold'>Informasi Paket</p>
+                        <p className='text-xl text-gray-700 font-extrabold'>Informasi Berkas</p>
                         <div className='w-full flex flex-col items-start justify-between'>
                             <p className='text-md text-gray-500'>
                                 Nama Warga Binaan
@@ -48,7 +48,7 @@ export default function Main() {
                         </div>
                     </div>
                     <div className='w-full bg-white p-2'>
-                        <p className='text-xl text-green-500 font-bold border-b-2'>Update Status Paket</p>
+                        <p className='text-xl text-green-500 font-bold border-b-2'>Update Status Berkas</p>
                         <div className='w-full p-2'>
                             <div className='w-full flex flex-col justify-end items-start'>
                                 {
