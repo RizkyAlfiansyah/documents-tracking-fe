@@ -148,19 +148,23 @@ const Pengajuan = () => {
                             />
                         </div>
                         <button className='bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
-                            <FontAwesomeIcon
-                                icon={faUpload}
-                                className='mr-2'
-                            />
+                            <div className='w-4 h-4 flex justify-center items-center'>
+                                <FontAwesomeIcon
+                                    icon={faUpload}
+                                    className='mr-2'
+                                />
+                            </div>
                             Export Data
                         </button>
                         <button className='bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
                             onClick={() => setModal(true)}
                         >
-                            <FontAwesomeIcon
-                                icon={faPlus}
-                                className='mr-2'
-                            />
+                            <div className='w-4 h-4 flex justify-center items-center'>
+                                <FontAwesomeIcon
+                                    icon={faPlus}
+                                    className='mr-2'
+                                />
+                            </div>
                             Buat Pengajuan
                         </button>
                     </div>
