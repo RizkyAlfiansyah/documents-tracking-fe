@@ -33,7 +33,7 @@ export default function Sidebar() {
                         <div className={`w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100  p-2 ${path == "/dashboard" && ("bg-slate-100")}`}
                             onClick={() => router.push("/dashboard")}
                         >
-                            <div className="w-2 h-2 flex justify-center items-center">
+                            <div className="w-4 h-4 flex justify-center items-center">
                                 <FontAwesomeIcon icon={faChartColumn} />
                             </div>
                             <span className="text-gray-600 sm:text-sm"> Dashboard </span>
@@ -41,7 +41,7 @@ export default function Sidebar() {
                         <div className={`w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100  p-2 ${path == "/dashboard/warga-binaan" && ("bg-slate-100")}`}
                             onClick={() => router.push("/dashboard/warga-binaan")}
                         >
-                            <div className="w-2 h-2 flex justify-center items-center">
+                            <div className="w-4 h-4 flex justify-center items-center">
                                 <FontAwesomeIcon icon={faPerson} />
                             </div>
                             <span className="text-gray-600 sm:text-sm"> Warga Binaan </span>
@@ -49,7 +49,7 @@ export default function Sidebar() {
                         <div className={`w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100  p-2 ${path == "/dashboard/pengajuan" && ("bg-slate-100")}`}
                             onClick={() => router.push("/dashboard/pengajuan")}
                         >
-                            <div className="w-2 h-2 flex justify-center items-center">
+                            <div className="w-4 h-4 flex justify-center items-center">
                                 <FontAwesomeIcon icon={faMailBulk} />
                             </div>
                             <span className="text-gray-600 sm:text-sm"> Pengajuan </span>
@@ -59,7 +59,7 @@ export default function Sidebar() {
                 <div className="w-full flex items-center">
                     <div className="w-full flex gap-4 items-center justify-start cursor-pointer rounded-full hover:bg-slate-100 p-2">
                         <button onClick={() => setOpenModal(true)} className="flex gap-2 justify-center items-center">
-                            <div className="w-2 h-2 flex justify-center items-center">
+                            <div className="w-4 h-4 flex justify-center items-center">
                                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
                             </div>
                             <span className="text-gray-600"> Logout </span>

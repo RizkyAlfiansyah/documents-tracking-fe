@@ -134,7 +134,7 @@ const WargaBinaan = () => {
                                 placeholder="Cari nama"
                             />
                         </div>
-                        <button className='bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
+                        <button className='flex gap-2 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
                             <div className='w-4 h-4 flex justify-center items-center'>
                                 <FontAwesomeIcon
                                     icon={faUpload}
@@ -143,7 +143,7 @@ const WargaBinaan = () => {
                             </div>
                             Export Data
                         </button>
-                        <button className='bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
+                        <button className='flex gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
                             onClick={() => setModal(true)}
                         >
                             <div className='w-4 h-4 flex justify-center items-center'>

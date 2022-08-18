@@ -104,7 +104,9 @@ const Pengajuan = () => {
                     setDataDetail(row.id)
                 }}
             >
-                <FontAwesomeIcon icon={faCircleExclamation} />
+                <div className='w-3 h-3 flex justify-center items-center'>
+                    <FontAwesomeIcon icon={faCircleExclamation} />
+                </div>
                 detail
             </button>,
             ignoreRowClick: true,
@@ -123,8 +125,10 @@ const Pengajuan = () => {
         };
 
         return (
-            <button key="delete" onClick={handleDelete} className='flex items-center gap-1 bg-red-600 hover:bg-red-700 px-4 py-1 text-white text-xs rounded-lg'>
-                <FontAwesomeIcon icon={faTrash} className='text-white' />
+            <button key="delete" onClick={handleDelete} className='flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-1 text-white text-xs rounded-lg'>
+                <div className='w-4 h-4 flex justify-center items-center'>
+                    <FontAwesomeIcon icon={faTrash} className='text-white' />
+                </div>
                 Delete
             </button>
         );
@@ -146,7 +150,7 @@ const Pengajuan = () => {
                                 placeholder="Cari nama"
                             />
                         </div>
-                        <button className='bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
+                        <button className='flex gap-2 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
                             <div className='w-4 h-4 flex justify-center items-center'>
                                 <FontAwesomeIcon
                                     icon={faUpload}
@@ -155,7 +159,7 @@ const Pengajuan = () => {
                             </div>
                             Export Data
                         </button>
-                        <button className='bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
+                        <button className='flex gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
                             onClick={() => setModal(true)}
                         >
                             <div className='w-4 h-4 flex justify-center items-center'>
