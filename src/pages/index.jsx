@@ -43,7 +43,7 @@ export default function Welcome() {
                             LPKA Maros
                         </span>
                         <div className='sm:w-80 w-full relative flex items-center lg:justify-start sm:justify-center lg:mb-auto mx-auto mb-auto bg-white rounded-md gap-0'>
-                            <div className='w-3 h-3 px-3 border-r-2'>
+                            <div className='w-3 h-3 flex justify-center items-center px-3 border-r-2'>
                                 <FontAwesomeIcon icon={faSearch} />
                             </div>
                             <input type="text" value={data} className='px-1 py-2 w-5/6 border-none focus:outline-none focus:ring-0' placeholder='Masukkan Nomor Resi'
