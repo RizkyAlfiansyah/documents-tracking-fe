@@ -51,6 +51,7 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
     }
 
     const printResi = () => {
+        localStorage.setItem('resi', JSON.stringify(datas));
         router.push('/resi-download?resi=' + datas.resi);
     }
 
