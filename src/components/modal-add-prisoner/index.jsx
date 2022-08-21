@@ -75,7 +75,7 @@ const ModalAddPrisoner = ({ isOpen, onClose }) => {
 
                     </div>
                     <div className='w-full'>
-                        <Label forInput="nik" value="Nomor Induk Keluarga" />
+                        <Label forInput="nik" value="Nomor Induk" />
                         <Input
                             type="text"
                             name="nik"

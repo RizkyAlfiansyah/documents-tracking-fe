@@ -50,6 +50,10 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
         }
     }
 
+    const printResi = () => {
+        router.push('/resi-download?resi=' + datas.resi);
+    }
+
     return (
         <Modal
             isOpen={isOpen}
@@ -87,7 +91,7 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
                                 <label htmlFor="" className="text-md font-bold">
                                     {datas.resi}
                                 </label>
-                                <button className='p-1 px-2 text-sm bg-cyan-700 hover:bg-cyan-500 text-white rounded-md flex gap-2'>
+                                <button className='p-1 px-2 text-sm bg-cyan-700 hover:bg-cyan-500 text-white rounded-md flex gap-2' onClick={printResi}>
                                     <FontAwesomeIcon
                                         icon={faDownload}
                                     />

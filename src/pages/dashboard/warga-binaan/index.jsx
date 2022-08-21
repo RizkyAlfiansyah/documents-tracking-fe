@@ -63,7 +63,7 @@ const WargaBinaan = () => {
 
         },
         {
-            name: 'NIK',
+            name: 'Nomor Induk',
             selector: row => <div className='text-xs'>
                 {row.nik}
             </div>,
