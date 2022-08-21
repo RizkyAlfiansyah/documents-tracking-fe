@@ -38,13 +38,13 @@ const Pengajuan = () => {
             if (router.query.edited) {
                 toast.success("Data berhasil diubah")
             } else if (router.query.deleted) {
-                if (router.query.deleted === true) {
+                if (router.query.deleted) {
                     toast.success("Data berhasil dihapus")
                 } else {
                     toast.error("Data gagal dihapus")
                 }
             } else if (router.query.success) {
-                if (router.query.success === true) {
+                if (router.query.success) {
                     toast.success("Data berhasil ditambahkan")
                 } else {
                     toast.error("Data gagal ditambahkan")
@@ -150,15 +150,15 @@ const Pengajuan = () => {
                                 placeholder="Cari nama"
                             />
                         </div>
-                        <button className='flex gap-2 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
+                        {/* <button className='flex gap-2 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold py-2 px-4 rounded'>
                             <div className='w-4 h-4 flex justify-center items-center'>
                                 <FontAwesomeIcon
                                     icon={faUpload}
                                     className='mr-2'
                                 />
                             </div>
-                            Export Data
-                        </button>
+                            Import Data
+                        </button> */}
                         <button className='flex gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
                             onClick={() => setModal(true)}
                         >
@@ -173,7 +173,7 @@ const Pengajuan = () => {
                     </div>
                     <div className='w-full p-2'>
                         <DataTable
-                            title="Data Warga Binaan"
+                            title="Data Pengajuan Berkas"
                             columns={columns}
                             data={filteredItems}
                             pagination

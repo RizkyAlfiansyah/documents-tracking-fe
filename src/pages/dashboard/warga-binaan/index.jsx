@@ -141,7 +141,7 @@ const WargaBinaan = () => {
                                     className='mr-2'
                                 />
                             </div>
-                            Export Data
+                            Import Data
                         </button>
                         <button className='flex gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold py-2 px-4 rounded'
                             onClick={() => setModal(true)}

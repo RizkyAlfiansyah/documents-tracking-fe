@@ -51,9 +51,9 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
 
     useEffect(() => {
         if (data.length > 0) {
-            let tempData = [];
+            let tempData = "";
             data.find(item => {
-                item.nama === value.nama ? tempData.push(item.nik) : null;
+                item.nama === value.nama ? tempData = item.nik : null;
             })
             setValue({
                 ...value,
@@ -101,7 +101,7 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
         >
             <div className='w-full flex flex-col justify-start items-center gap-4'>
                 <div className='w-full p-1 flex justify-between items-center'>
-                    <h1 className='text-xl font-semibold'>Tambah Warga Binaan</h1>
+                    <h1 className='text-xl font-semibold'>Buat Pengajuan</h1>
                     <div className='w-2 h-2 flex items-center justify-center'>
                         <FontAwesomeIcon
                             icon={faClose}

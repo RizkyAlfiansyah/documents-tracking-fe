@@ -52,7 +52,7 @@ export default function Main() {
                         <div className='w-full p-2'>
                             <div className='w-full flex flex-col justify-end items-start'>
                                 {
-                                    data?.checkpoints?.length > 1 ?
+                                    data?.checkpoints?.length >= 1 ?
                                         data?.checkpoints?.map((item, index) => {
                                             return (
                                                 <>

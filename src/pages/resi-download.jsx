@@ -14,14 +14,14 @@ const Home = () => {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        if (router.query.resi) {
-            setData(JSON.parse(localStorage.getItem('resi')))
+        if (router.query.resi || localStorage.getItem('code')) {
+            setData(JSON.parse(localStorage.getItem('code')))
         } else {
             setError(true)
         }
     }, [router])
 
-    console.log(data)
+    console.log(data?.resi)
 
     return (
         <div>
@@ -70,7 +70,7 @@ const Home = () => {
                                     Nomor Induk
                                 </p>
                                 <p>
-                                    : {data?.id_document}
+                                    : {data?.nik}
                                 </p>
                             </div>
                             <div className='w-full flex gap-28'>
@@ -95,7 +95,7 @@ const Home = () => {
                                     )
                                     :
                                     <QRCodeCanvas
-                                        value={`https://lacak-dokumen.vercel.app/order?resi=${router.query.resi}`}
+                                        value={`https://lacak-dokumen.vercel.app/order?resi=${data?.resi}`}
                                     />
                             }
                         </div>
