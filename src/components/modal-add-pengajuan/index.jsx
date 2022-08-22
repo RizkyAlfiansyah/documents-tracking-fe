@@ -70,7 +70,7 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
                 if (res.data) {
                     let check = {};
                     check.id_pengajuan = res.data.id;
-                    check.pesan = 'Resi Telah Dibuat';
+                    check.pesan = 'Usulan Telah Dibuat';
                     check.waktu = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
                     postCheckpoint(token, check).then(res => {
                         if (res.data) {
