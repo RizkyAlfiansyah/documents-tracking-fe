@@ -18,6 +18,7 @@
     "react-hook-form": "^7.34.0",
     "react-hot-toast": "^2.3.0",
     "react-loading-skeleton": "^3.1.0",
+    "react-slideshow-image": "^4.0.4",
     "vertical-stepper-nav": "^1.0.2"
   },
   "devDependencies": {
