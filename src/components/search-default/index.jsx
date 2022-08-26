@@ -6,7 +6,7 @@ const Search = ({ onChange, onClear, value, placeholder }) => {
 
     return (
         <div className='relative bg-white flex justify-start gap-2 items-center rounded-md'>
-            <div className='w-full relative'>
+            <div className='w-full relative flex gap-2'>
                 <input
                     type="text"
                     placeholder={placeholder}
