@@ -146,7 +146,7 @@ const ModalAddPengajuan = ({ isOpen, onClose }) => {
                         </div>
                     </div>
                     <div className='w-full'>
-                        <Label forInput="nik" value="Nomor Induk" />
+                        <Label forInput="nik" value="Nomor Agenda" />
                         <Input
                             type="text"
                             name="nik"

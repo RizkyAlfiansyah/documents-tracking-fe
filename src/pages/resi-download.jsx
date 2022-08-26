@@ -67,7 +67,7 @@ const Home = () => {
                             </div>
                             <div className='w-full flex gap-12'>
                                 <p>
-                                    Nomor Induk
+                                    Nomor Agenda
                                 </p>
                                 <p>
                                     : {data?.nik}
