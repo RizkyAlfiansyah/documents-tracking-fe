@@ -14,11 +14,13 @@ const Search = ({ onChange, onClear, value, placeholder }) => {
                     onChange={onChange}
                     value={value}
                 />
-                <FontAwesomeIcon
-                    icon={faClose}
-                    className='absolute text-gray-500 cursor-pointer top-2 right-2'
-                    onClick={onClear}
-                />
+                <div className='w-4 h-4 flex justify-center items-center'>
+                    <FontAwesomeIcon
+                        icon={faClose}
+                        className='absolute text-gray-500 cursor-pointer top-2 right-2'
+                        onClick={onClear}
+                    />
+                </div>
             </div>
         </div>
     )
