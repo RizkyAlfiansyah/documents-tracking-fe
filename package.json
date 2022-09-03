@@ -20,6 +20,7 @@
     "react-hot-toast": "^2.3.0",
     "react-loading-skeleton": "^3.1.0",
     "react-slideshow-image": "^4.0.4",
+    "react-use-analytics-api": "^1.4.17",
     "vertical-stepper-nav": "^1.0.2"
   },
   "devDependencies": {

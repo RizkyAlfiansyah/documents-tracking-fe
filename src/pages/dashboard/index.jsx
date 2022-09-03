@@ -108,49 +108,22 @@ const Dashboard = () => {
 
     return (
         <HomePage title="Dashboard">
-            <div className='w-full flex p-4 justify-between'>
+            <div className='w-full flex p-4 justify-between overflow-hidden'>
                 <div className='w-4/12 flex flex-col gap-3'>
-                    <p className='w-full rounded-md bg-orange-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Cuti Menjelang Bebas</span>
+                    <p className='w-full rounded-md bg-orange-700 p-2 cursor-pointer hover:shadow-xl'>
+                        <span className='font-bold text-white'>Alur Proses Pengusulan Cuti Bersyarat</span>
                     </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
+                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-xl'>
                         <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
                     </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
-                    </p>
-                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-md'>
-                        <span className='font-bold text-white'>Alur Proses Pengusulan Pembebasan Bersyarat</span>
+                    <p className='w-full rounded-md bg-blue-700 p-2 cursor-pointer hover:shadow-xl'>
+                        <span className='font-bold text-white'>Alur Proses Pengusulan Asimilasi</span>
                     </p>
                 </div>
                 <div className='w-8/12 h-full flex justify-center items-center'>
                     <Image src={slideImages[0].url}
-                        width="500"
-                        height="800"
+                        width="400"
+                        height="580"
                     />
                 </div>
             </div>
