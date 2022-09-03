@@ -93,7 +93,7 @@ const Pengajuan = () => {
         },
         {
             name: 'Checkpoint',
-            selector: row => <div className='text-xs'>
+            selector: row => <div className='w-32 text-xs'>
                 {row.last_checkpoint?.pesan}
             </div>,
         },
@@ -137,7 +137,7 @@ const Pengajuan = () => {
     return (
         <>
             <HomePage title="Data Pengajuan">
-                <div className='w-full p-2 flex flex-col gap-2'>
+                <div className='w-full p-1 flex flex-col gap-2'>
                     <div className='w-full flex justify-end items-center gap-2'>
                         <div className='w-52 border border-gray-400 rounded-sm'>
                             <Search

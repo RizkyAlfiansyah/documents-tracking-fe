@@ -57,24 +57,24 @@ const Home = () => {
                             Lpka Maros
                         </p>
                         <div className='w-auto flex flex-col gap-2 justify-start items-start'>
-                            <div className='w-full flex gap-24'>
-                                <p>
+                            <div className='w-full flex gap-2'>
+                                <p className='w-44'>
                                     Nama
                                 </p>
                                 <p>
                                     : {data?.nama}
                                 </p>
                             </div>
-                            <div className='w-full flex gap-12'>
-                                <p>
+                            <div className='w-full flex gap-2'>
+                                <p className='w-44'>
                                     Nomor Agenda
                                 </p>
                                 <p>
                                     : {data?.nik}
                                 </p>
                             </div>
-                            <div className='w-full flex gap-28'>
-                                <p>
+                            <div className='w-full flex gap-2'>
+                                <p className='w-44'>
                                     Resi
                                 </p>
                                 <p>

@@ -110,7 +110,7 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
                                     return (
                                         <div className="w-full flex items-center justify-between border-b-2 pb-2" key={index}>
                                             <label htmlFor="cp1">Checkpoint {index + 1}</label>
-                                            <input type="text" className="w-8/12 p-1 m-0 focus:outline-none focus:ring-0 rounded-sm mt-2 disabled:bg-slate-300" value={item?.pesan} disabled />
+                                            <textarea className="w-8/12 h-auto p-1 m-0 focus:outline-none focus:ring-0 rounded-sm mt-2 disabled:bg-slate-300 resize-none" value={item?.pesan} disabled />
                                         </div>
                                     )
                                 })
@@ -118,15 +118,16 @@ const ModalDetailPengajuan = ({ data, isOpen, onClose }) => {
                         </div>
                         <div className="w-full flex items-center justify-between border-b-2 pb-2" >
                             <label htmlFor="cp1">Checkpoint {datas?.checkpoints?.length + 1}</label>
-                            <input type="text" className="w-8/12 p-1 m-0 border border-gray-400 focus:outline-none focus:ring-0 rounded-sm mt-2"
+                            <textarea type="text" className="w-8/12 p-1 m-0 border border-gray-400 focus:outline-none focus:ring-0 rounded-sm mt-2 resize-none"
                                 onChange={(e) => setCheck({ ...check, pesan: e.target.value })}
                             />
                         </div>
                     </div>
                 </div>
                 <div className='w-full flex items-center justify-end'>
-                    <button className='bg-blue-600 hover:bg-blue-500 text-white rounded-md px-4 py-2'
+                    <button className='bg-blue-600 hover:bg-blue-500 text-white rounded-md px-4 py-2 disabled:bg-slate-400'
                         onClick={() => handleSubmit()}
+                        disabled={check.pesan === '' ? true : false}
                     >
                         Update
                     </button>

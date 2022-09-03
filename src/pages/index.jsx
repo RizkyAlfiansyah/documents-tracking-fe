@@ -13,9 +13,7 @@ export default function Welcome() {
 
 
     useEffect(() => {
-        useEffect(() => {
-            ReactGA.pageview(window.location.pathname + window.location.search);
-        }, [])
+        ReactGA.pageview(window.location.pathname + window.location.search);
         handleChangeTitleAction({
             title: 'Welcome',
             onBack: null,
