@@ -1,8 +1,14 @@
 import { Header, PageHead } from 'layout'
 import React from 'react'
 import Sidebar from './main/sidebar'
+import ReactGA from 'react-ga';
+import { useEffect } from 'react';
 
 const HomePage = ({ children, title }) => {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
 
     return (
         <>

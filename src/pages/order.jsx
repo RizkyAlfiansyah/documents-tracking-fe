@@ -4,13 +4,15 @@ import { useRouter } from 'next/router'
 import { PageHead } from 'layout';
 import { getResiById } from 'lib/axios';
 import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
+import ReactGA from 'react-ga';
 
 export default function Main() {
     const router = useRouter()
     const [data, setData] = useState([])
 
     useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
         if (router.query.resi) {
             getResiById(router.query.resi).then(res => {
                 setData(res.data)

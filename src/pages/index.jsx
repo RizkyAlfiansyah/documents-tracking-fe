@@ -4,6 +4,7 @@ import { faPhone, faSearch } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useHeaderStore } from 'store'
 import { useRouter } from 'next/router'
+import ReactGA from 'react-ga';
 
 export default function Welcome() {
     const router = useRouter()
@@ -12,6 +13,9 @@ export default function Welcome() {
 
 
     useEffect(() => {
+        useEffect(() => {
+            ReactGA.pageview(window.location.pathname + window.location.search);
+        }, [])
         handleChangeTitleAction({
             title: 'Welcome',
             onBack: null,
@@ -21,6 +25,11 @@ export default function Welcome() {
 
     const submitResi = () => {
         if (data) {
+            ReactGA.event({
+                category: 'User',
+                action: 'Search Resi',
+                label: data
+            });
             router.push('/order?resi=' + data)
         }
     }
